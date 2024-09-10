@@ -13,3 +13,35 @@ Here are some key aspects and functions of an operating system:
 - **System Performance:** Operating systems aim to optimize system performance by managing memory, caching, and process scheduling efficiently.
 
 In summary, an operating system is essential for managing computer resources, providing an interface for users, and ensuring the efficient and secure operation of computer hardware and software.
+Q: what is single user operating system 
+Ans: A single-user operating system is a type of computer system that allows only one user to use the computer at a given time. Its primary goals are to maximize user convenience and responsiveness rather than focusing on maximizing CPU and peripheral device utilization. Single-user systems typically utilize I/O devices like keyboards, mice, display screens, scanners, and small printers. They can adopt technology from larger operating systems, catering to individuals who often have sole access to a computer and may not require advanced resource management.
+Q: what is multi program operating system?
+Ans: A multi-programmed operating system is designed to maximize CPU utilization by allowing multiple programs to reside in memory simultaneously. It ensures that the CPU always has a process to execute, even when one process is waiting for an I/O operation to complete. When a process needs to wait, the operating system switches the CPU to another process, preventing idle time. This system is particularly useful in batch systems, where jobs with similar requirements are executed in batches, one after the other.
+Q: what is real time operating system
+Ans: A real-time operating system (RTOS) is a specialized system that guarantees a certain capability within a specified time constraint. It is used when rigid time requirements are placed on the operation of a processor or data flow, often in dedicated applications like scientific experiments, medical imaging, industrial control, and specific display systems.
+
+There are two types of real-time systems:
+
+1. **Hard Real-Time System**: This system provides a strict guarantee that critical tasks will be completed on time. All delays in the system must be bounded, including data retrieval and operating system request processing times. Secondary storage is often limited or absent, with data stored in short-term or read-only memory.
+
+2. **Soft Real-Time System**: In this system, critical real-time tasks are given priority over other tasks and retain that priority until completion. While delays need to be bounded, soft real-time systems can be mixed with other system types, unlike hard real-time systems, which conflict with time-sharing systems.
+Q: what is Interrupts, traps and software interrupts (UNIX signals)
+Ans: **Interrupts**:
+- An interrupt is a signal from a hardware device, typically an I/O device, to the CPU, requesting attention.
+- Interrupts allow devices to communicate with the CPU and are essential for efficient multitasking.
+- When an interrupt occurs, the CPU saves the current state, including the address of the interrupted instruction, and transfers control to a specific routine called the Interrupt Service Routine (ISR).
+- The ISR handles the device's request, and after completion, the CPU resumes the interrupted task.
+
+**Traps (or Exceptions)**:
+- A trap is a software-generated interrupt, triggered by either an error or a user request for an operating system service.
+- Errors like division by zero or invalid memory access can cause traps, allowing the operating system to handle these exceptions gracefully.
+- Traps are also used for system calls, where a user or application requests a service from the operating system.
+
+**Software Interrupts (UNIX Signals)**:
+- A software interrupt, or signal, is an event generated to get the attention of a process.
+- For example, pressing <Ctrl-C> while a program is running generates a signal called SIGINT (Interrupt signal).
+- There are three possible actions when a signal is received:
+  1. **Default Action**: The kernel usually terminates the process and may generate a 'core' file to help understand the process state at termination.
+  2. **Ignore Signal**: The process can intercept and ignore the signal.
+  3. **Programmer-Defined Action**: The process can intercept the signal and perform a custom action defined by the programmer.
+- UNIX and Linux systems use signals extensively for various purposes, and their behavior can be customized to suit specific needs.
